@@ -1,0 +1,610 @@
+cc -Wall -Wextra -Werror -O2 -Werror=array-bounds=0   -c -o simple-kvm.o simple-kvm.c
+as   -o guest16.o guest16.s
+cc -Wall -Wextra -Werror -O2 -Werror=array-bounds=0 -m32 -ffreestanding -fno-pic -c -o guest32.o guest.c
+ld -T guest.ld -m elf_i386 guest32.o -o guest32.img
+ld -b binary -r guest32.img -o guest32.img.o
+cc -Wall -Wextra -Werror -O2 -Werror=array-bounds=0 -m64 -ffreestanding -fno-pic -c -o guest64.o guest.c
+ld -T guest.ld guest64.o -o guest64.img
+ld -b binary -r guest64.img -o guest64.img.o
+ld -r -T payload.ld -o payload.o
+cc simple-kvm.o payload.o -o simple-kvm
+/usr/bin/ld: warning: payload.o: missing .note.GNU-stack section implies executable stack
+/usr/bin/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+./simple-kvm -l
+CONFIGURATION PARAMETERS
+TOTAL NUMBER OF PAGES : "8192"
+TOTAL MEMORY SIZE : "33554432" Bytes
+PAGE SIZE : "4096" Bytes
+SAMPLE SIZE : "100" pages
+SAMPLING PERIOD : "30" seconds
+
+
+RUN "1"
+ACTUAL         : Number of pages accessed are : "1879" 
+CURRENT SAMPLE : Number of pages accessed are : "25" 
+
+ACTUAL         : Percentage of pages accessed is : "22.937012" % 
+CURRENT SAMPLE : Percentage of pages accessed is : "25.000000" % 
+SLOW MOVING AVG: Percentage of pages accessed is : "25.000000" % 
+FAST MOVING AVG: Percentage of pages accessed is : "25.000000" % 
+MAX ESTIMATE   : Percentage of pages accessed is : "25.000000" % 
+
+ACTUAL         : Working set estimate is : "7696384" Bytes 
+CURRENT SAMPLE : Working set estimate is : "8388608" Bytes 
+SLOW MOVING AVG: Working set estimate is : "8388608" Bytes 
+FAST MOVING AVG: Working set estimate is : "8388608" Bytes 
+MAX ESTIMATE   : Working set estimate is : "8388608" Bytes 
+
+CURRENT SAMPLE : Error in Percentage of pages accessed is : "2.062988" % 
+SLOW MOVING AVG: Error in Percentage of pages accessed is : "2.062988" % 
+FAST MOVING AVG: Error in Percentage of pages accessed is : "2.062988" % 
+MAX ESTIMATE   : Error in Percentage of pages accessed is : "2.062988" % 
+
+CURRENT SAMPLE : Error in working set estimate is : "692224" Bytes 
+SLOW MOVING AVG: Error in working set estimate is : "692224" Bytes 
+FAST MOVING AVG: Error in working set estimate is : "692224" Bytes 
+MAX ESTIMATE   : Error in working set estimate is : "692224" Bytes 
+
+
+
+RUN "2"
+ACTUAL         : Number of pages accessed are : "1891" 
+CURRENT SAMPLE : Number of pages accessed are : "28" 
+
+ACTUAL         : Percentage of pages accessed is : "23.083496" % 
+CURRENT SAMPLE : Percentage of pages accessed is : "28.000000" % 
+SLOW MOVING AVG: Percentage of pages accessed is : "25.300000" % 
+FAST MOVING AVG: Percentage of pages accessed is : "27.700000" % 
+MAX ESTIMATE   : Percentage of pages accessed is : "28.000000" % 
+
+ACTUAL         : Working set estimate is : "7745536" Bytes 
+CURRENT SAMPLE : Working set estimate is : "9395240" Bytes 
+SLOW MOVING AVG: Working set estimate is : "8489271" Bytes 
+FAST MOVING AVG: Working set estimate is : "9294576" Bytes 
+MAX ESTIMATE   : Working set estimate is : "9395240" Bytes 
+
+CURRENT SAMPLE : Error in Percentage of pages accessed is : "4.916504" % 
+SLOW MOVING AVG: Error in Percentage of pages accessed is : "2.216504" % 
+FAST MOVING AVG: Error in Percentage of pages accessed is : "4.616504" % 
+MAX ESTIMATE   : Error in Percentage of pages accessed is : "4.916504" % 
+
+CURRENT SAMPLE : Error in working set estimate is : "1649704" Bytes 
+SLOW MOVING AVG: Error in working set estimate is : "743735" Bytes 
+FAST MOVING AVG: Error in working set estimate is : "1549040" Bytes 
+MAX ESTIMATE   : Error in working set estimate is : "1649704" Bytes 
+
+
+
+RUN "3"
+ACTUAL         : Number of pages accessed are : "1883" 
+CURRENT SAMPLE : Number of pages accessed are : "18" 
+
+ACTUAL         : Percentage of pages accessed is : "22.985840" % 
+CURRENT SAMPLE : Percentage of pages accessed is : "18.000000" % 
+SLOW MOVING AVG: Percentage of pages accessed is : "24.570000" % 
+FAST MOVING AVG: Percentage of pages accessed is : "18.970000" % 
+MAX ESTIMATE   : Percentage of pages accessed is : "24.570000" % 
+
+ACTUAL         : Working set estimate is : "7712768" Bytes 
+CURRENT SAMPLE : Working set estimate is : "6039797" Bytes 
+SLOW MOVING AVG: Working set estimate is : "8244323" Bytes 
+FAST MOVING AVG: Working set estimate is : "6365274" Bytes 
+MAX ESTIMATE   : Working set estimate is : "8244323" Bytes 
+
+CURRENT SAMPLE : Error in Percentage of pages accessed is : "-4.985840" % 
+SLOW MOVING AVG: Error in Percentage of pages accessed is : "1.584160" % 
+FAST MOVING AVG: Error in Percentage of pages accessed is : "-4.015840" % 
+MAX ESTIMATE   : Error in Percentage of pages accessed is : "1.584160" % 
+
+CURRENT SAMPLE : Error in working set estimate is : "-1672971" Bytes 
+SLOW MOVING AVG: Error in working set estimate is : "531555" Bytes 
+FAST MOVING AVG: Error in working set estimate is : "-1347494" Bytes 
+MAX ESTIMATE   : Error in working set estimate is : "531555" Bytes 
+
+
+
+RUN "4"
+ACTUAL         : Number of pages accessed are : "1871" 
+CURRENT SAMPLE : Number of pages accessed are : "29" 
+
+ACTUAL         : Percentage of pages accessed is : "22.839355" % 
+CURRENT SAMPLE : Percentage of pages accessed is : "29.000000" % 
+SLOW MOVING AVG: Percentage of pages accessed is : "25.013000" % 
+FAST MOVING AVG: Percentage of pages accessed is : "27.997000" % 
+MAX ESTIMATE   : Percentage of pages accessed is : "29.000000" % 
+
+ACTUAL         : Working set estimate is : "7663616" Bytes 
+CURRENT SAMPLE : Working set estimate is : "9730785" Bytes 
+SLOW MOVING AVG: Working set estimate is : "8392969" Bytes 
+FAST MOVING AVG: Working set estimate is : "9394233" Bytes 
+MAX ESTIMATE   : Working set estimate is : "9730785" Bytes 
+
+CURRENT SAMPLE : Error in Percentage of pages accessed is : "6.160645" % 
+SLOW MOVING AVG: Error in Percentage of pages accessed is : "2.173645" % 
+FAST MOVING AVG: Error in Percentage of pages accessed is : "5.157645" % 
+MAX ESTIMATE   : Error in Percentage of pages accessed is : "6.160645" % 
+
+CURRENT SAMPLE : Error in working set estimate is : "2067169" Bytes 
+SLOW MOVING AVG: Error in working set estimate is : "729353" Bytes 
+FAST MOVING AVG: Error in working set estimate is : "1730617" Bytes 
+MAX ESTIMATE   : Error in working set estimate is : "2067169" Bytes 
+
+
+
+RUN "5"
+ACTUAL         : Number of pages accessed are : "7936" 
+CURRENT SAMPLE : Number of pages accessed are : "97" 
+
+ACTUAL         : Percentage of pages accessed is : "96.875000" % 
+CURRENT SAMPLE : Percentage of pages accessed is : "97.000000" % 
+SLOW MOVING AVG: Percentage of pages accessed is : "32.211700" % 
+FAST MOVING AVG: Percentage of pages accessed is : "90.099700" % 
+MAX ESTIMATE   : Percentage of pages accessed is : "97.000000" % 
+
+ACTUAL         : Working set estimate is : "32505856" Bytes 
+CURRENT SAMPLE : Working set estimate is : "32547799" Bytes 
+SLOW MOVING AVG: Working set estimate is : "10808452" Bytes 
+FAST MOVING AVG: Working set estimate is : "30232442" Bytes 
+MAX ESTIMATE   : Working set estimate is : "32547799" Bytes 
+
+CURRENT SAMPLE : Error in Percentage of pages accessed is : "0.125000" % 
+SLOW MOVING AVG: Error in Percentage of pages accessed is : "-64.663300" % 
+FAST MOVING AVG: Error in Percentage of pages accessed is : "-6.775300" % 
+MAX ESTIMATE   : Error in Percentage of pages accessed is : "0.125000" % 
+
+CURRENT SAMPLE : Error in working set estimate is : "41943" Bytes 
+SLOW MOVING AVG: Error in working set estimate is : "-21697404" Bytes 
+FAST MOVING AVG: Error in working set estimate is : "-2273414" Bytes 
+MAX ESTIMATE   : Error in working set estimate is : "41943" Bytes 
+
+
+
+RUN "6"
+ACTUAL         : Number of pages accessed are : "1890" 
+CURRENT SAMPLE : Number of pages accessed are : "24" 
+
+ACTUAL         : Percentage of pages accessed is : "23.071289" % 
+CURRENT SAMPLE : Percentage of pages accessed is : "24.000000" % 
+SLOW MOVING AVG: Percentage of pages accessed is : "31.390530" % 
+FAST MOVING AVG: Percentage of pages accessed is : "30.609970" % 
+MAX ESTIMATE   : Percentage of pages accessed is : "31.390530" % 
+
+ACTUAL         : Working set estimate is : "7741440" Bytes 
+CURRENT SAMPLE : Working set estimate is : "8053063" Bytes 
+SLOW MOVING AVG: Working set estimate is : "10532913" Bytes 
+FAST MOVING AVG: Working set estimate is : "10271000" Bytes 
+MAX ESTIMATE   : Working set estimate is : "10532913" Bytes 
+
+CURRENT SAMPLE : Error in Percentage of pages accessed is : "0.928711" % 
+SLOW MOVING AVG: Error in Percentage of pages accessed is : "8.319241" % 
+FAST MOVING AVG: Error in Percentage of pages accessed is : "7.538681" % 
+MAX ESTIMATE   : Error in Percentage of pages accessed is : "8.319241" % 
+
+CURRENT SAMPLE : Error in working set estimate is : "311623" Bytes 
+SLOW MOVING AVG: Error in working set estimate is : "2791473" Bytes 
+FAST MOVING AVG: Error in working set estimate is : "2529560" Bytes 
+MAX ESTIMATE   : Error in working set estimate is : "2791473" Bytes 
+
+
+
+RUN "7"
+ACTUAL         : Number of pages accessed are : "1880" 
+CURRENT SAMPLE : Number of pages accessed are : "23" 
+
+ACTUAL         : Percentage of pages accessed is : "22.949219" % 
+CURRENT SAMPLE : Percentage of pages accessed is : "23.000000" % 
+SLOW MOVING AVG: Percentage of pages accessed is : "30.551477" % 
+FAST MOVING AVG: Percentage of pages accessed is : "23.760997" % 
+MAX ESTIMATE   : Percentage of pages accessed is : "30.551477" % 
+
+ACTUAL         : Working set estimate is : "7700480" Bytes 
+CURRENT SAMPLE : Working set estimate is : "7717519" Bytes 
+SLOW MOVING AVG: Working set estimate is : "10251373" Bytes 
+FAST MOVING AVG: Working set estimate is : "7972867" Bytes 
+MAX ESTIMATE   : Working set estimate is : "10251373" Bytes 
+
+CURRENT SAMPLE : Error in Percentage of pages accessed is : "0.050781" % 
+SLOW MOVING AVG: Error in Percentage of pages accessed is : "7.602258" % 
+FAST MOVING AVG: Error in Percentage of pages accessed is : "0.811778" % 
+MAX ESTIMATE   : Error in Percentage of pages accessed is : "7.602258" % 
+
+CURRENT SAMPLE : Error in working set estimate is : "17039" Bytes 
+SLOW MOVING AVG: Error in working set estimate is : "2550893" Bytes 
+FAST MOVING AVG: Error in working set estimate is : "272387" Bytes 
+MAX ESTIMATE   : Error in working set estimate is : "2550893" Bytes 
+
+
+
+RUN "8"
+ACTUAL         : Number of pages accessed are : "1855" 
+CURRENT SAMPLE : Number of pages accessed are : "24" 
+
+ACTUAL         : Percentage of pages accessed is : "22.644043" % 
+CURRENT SAMPLE : Percentage of pages accessed is : "24.000000" % 
+SLOW MOVING AVG: Percentage of pages accessed is : "29.896329" % 
+FAST MOVING AVG: Percentage of pages accessed is : "23.976100" % 
+MAX ESTIMATE   : Percentage of pages accessed is : "29.896329" % 
+
+ACTUAL         : Working set estimate is : "7598080" Bytes 
+CURRENT SAMPLE : Working set estimate is : "8053063" Bytes 
+SLOW MOVING AVG: Working set estimate is : "10031542" Bytes 
+FAST MOVING AVG: Working set estimate is : "8045043" Bytes 
+MAX ESTIMATE   : Working set estimate is : "10031542" Bytes 
+
+CURRENT SAMPLE : Error in Percentage of pages accessed is : "1.355957" % 
+SLOW MOVING AVG: Error in Percentage of pages accessed is : "7.252286" % 
+FAST MOVING AVG: Error in Percentage of pages accessed is : "1.332057" % 
+MAX ESTIMATE   : Error in Percentage of pages accessed is : "7.252286" % 
+
+CURRENT SAMPLE : Error in working set estimate is : "454983" Bytes 
+SLOW MOVING AVG: Error in working set estimate is : "2433462" Bytes 
+FAST MOVING AVG: Error in working set estimate is : "446963" Bytes 
+MAX ESTIMATE   : Error in working set estimate is : "2433462" Bytes 
+
+
+
+RUN "9"
+ACTUAL         : Number of pages accessed are : "1831" 
+CURRENT SAMPLE : Number of pages accessed are : "21" 
+
+ACTUAL         : Percentage of pages accessed is : "22.351074" % 
+CURRENT SAMPLE : Percentage of pages accessed is : "21.000000" % 
+SLOW MOVING AVG: Percentage of pages accessed is : "29.006696" % 
+FAST MOVING AVG: Percentage of pages accessed is : "21.297610" % 
+MAX ESTIMATE   : Percentage of pages accessed is : "29.006696" % 
+
+ACTUAL         : Working set estimate is : "7499776" Bytes 
+CURRENT SAMPLE : Working set estimate is : "7046430" Bytes 
+SLOW MOVING AVG: Working set estimate is : "9733030" Bytes 
+FAST MOVING AVG: Working set estimate is : "7146291" Bytes 
+MAX ESTIMATE   : Working set estimate is : "9733030" Bytes 
+
+CURRENT SAMPLE : Error in Percentage of pages accessed is : "-1.351074" % 
+SLOW MOVING AVG: Error in Percentage of pages accessed is : "6.655622" % 
+FAST MOVING AVG: Error in Percentage of pages accessed is : "-1.053464" % 
+MAX ESTIMATE   : Error in Percentage of pages accessed is : "6.655622" % 
+
+CURRENT SAMPLE : Error in working set estimate is : "-453346" Bytes 
+SLOW MOVING AVG: Error in working set estimate is : "2233254" Bytes 
+FAST MOVING AVG: Error in working set estimate is : "-353485" Bytes 
+MAX ESTIMATE   : Error in working set estimate is : "2233254" Bytes 
+
+
+
+RUN "10"
+ACTUAL         : Number of pages accessed are : "1833" 
+CURRENT SAMPLE : Number of pages accessed are : "17" 
+
+ACTUAL         : Percentage of pages accessed is : "22.375488" % 
+CURRENT SAMPLE : Percentage of pages accessed is : "17.000000" % 
+SLOW MOVING AVG: Percentage of pages accessed is : "27.806027" % 
+FAST MOVING AVG: Percentage of pages accessed is : "17.429761" % 
+MAX ESTIMATE   : Percentage of pages accessed is : "27.806027" % 
+
+ACTUAL         : Working set estimate is : "7507968" Bytes 
+CURRENT SAMPLE : Working set estimate is : "5704253" Bytes 
+SLOW MOVING AVG: Working set estimate is : "9330152" Bytes 
+FAST MOVING AVG: Working set estimate is : "5848456" Bytes 
+MAX ESTIMATE   : Working set estimate is : "9330152" Bytes 
+
+CURRENT SAMPLE : Error in Percentage of pages accessed is : "-5.375488" % 
+SLOW MOVING AVG: Error in Percentage of pages accessed is : "5.430538" % 
+FAST MOVING AVG: Error in Percentage of pages accessed is : "-4.945727" % 
+MAX ESTIMATE   : Error in Percentage of pages accessed is : "5.430538" % 
+
+CURRENT SAMPLE : Error in working set estimate is : "-1803715" Bytes 
+SLOW MOVING AVG: Error in working set estimate is : "1822184" Bytes 
+FAST MOVING AVG: Error in working set estimate is : "-1659512" Bytes 
+MAX ESTIMATE   : Error in working set estimate is : "1822184" Bytes 
+
+
+
+RUN "11"
+ACTUAL         : Number of pages accessed are : "1831" 
+CURRENT SAMPLE : Number of pages accessed are : "27" 
+
+ACTUAL         : Percentage of pages accessed is : "22.351074" % 
+CURRENT SAMPLE : Percentage of pages accessed is : "27.000000" % 
+SLOW MOVING AVG: Percentage of pages accessed is : "27.725424" % 
+FAST MOVING AVG: Percentage of pages accessed is : "26.042976" % 
+MAX ESTIMATE   : Percentage of pages accessed is : "27.725424" % 
+
+ACTUAL         : Working set estimate is : "7499776" Bytes 
+CURRENT SAMPLE : Working set estimate is : "9059696" Bytes 
+SLOW MOVING AVG: Working set estimate is : "9303106" Bytes 
+FAST MOVING AVG: Working set estimate is : "8738572" Bytes 
+MAX ESTIMATE   : Working set estimate is : "9303106" Bytes 
+
+CURRENT SAMPLE : Error in Percentage of pages accessed is : "4.648926" % 
+SLOW MOVING AVG: Error in Percentage of pages accessed is : "5.374350" % 
+FAST MOVING AVG: Error in Percentage of pages accessed is : "3.691902" % 
+MAX ESTIMATE   : Error in Percentage of pages accessed is : "5.374350" % 
+
+CURRENT SAMPLE : Error in working set estimate is : "1559920" Bytes 
+SLOW MOVING AVG: Error in working set estimate is : "1803330" Bytes 
+FAST MOVING AVG: Error in working set estimate is : "1238796" Bytes 
+MAX ESTIMATE   : Error in working set estimate is : "1803330" Bytes 
+
+
+
+RUN "12"
+ACTUAL         : Number of pages accessed are : "1831" 
+CURRENT SAMPLE : Number of pages accessed are : "20" 
+
+ACTUAL         : Percentage of pages accessed is : "22.351074" % 
+CURRENT SAMPLE : Percentage of pages accessed is : "20.000000" % 
+SLOW MOVING AVG: Percentage of pages accessed is : "26.952882" % 
+FAST MOVING AVG: Percentage of pages accessed is : "20.604298" % 
+MAX ESTIMATE   : Percentage of pages accessed is : "26.952882" % 
+
+ACTUAL         : Working set estimate is : "7499776" Bytes 
+CURRENT SAMPLE : Working set estimate is : "6710886" Bytes 
+SLOW MOVING AVG: Working set estimate is : "9043884" Bytes 
+FAST MOVING AVG: Working set estimate is : "6913654" Bytes 
+MAX ESTIMATE   : Working set estimate is : "9043884" Bytes 
+
+CURRENT SAMPLE : Error in Percentage of pages accessed is : "-2.351074" % 
+SLOW MOVING AVG: Error in Percentage of pages accessed is : "4.601807" % 
+FAST MOVING AVG: Error in Percentage of pages accessed is : "-1.746777" % 
+MAX ESTIMATE   : Error in Percentage of pages accessed is : "4.601807" % 
+
+CURRENT SAMPLE : Error in working set estimate is : "-788890" Bytes 
+SLOW MOVING AVG: Error in working set estimate is : "1544108" Bytes 
+FAST MOVING AVG: Error in working set estimate is : "-586122" Bytes 
+MAX ESTIMATE   : Error in working set estimate is : "1544108" Bytes 
+
+
+
+RUN "13"
+ACTUAL         : Number of pages accessed are : "7936" 
+CURRENT SAMPLE : Number of pages accessed are : "98" 
+
+ACTUAL         : Percentage of pages accessed is : "96.875000" % 
+CURRENT SAMPLE : Percentage of pages accessed is : "98.000000" % 
+SLOW MOVING AVG: Percentage of pages accessed is : "34.057593" % 
+FAST MOVING AVG: Percentage of pages accessed is : "90.260430" % 
+MAX ESTIMATE   : Percentage of pages accessed is : "98.000000" % 
+
+ACTUAL         : Working set estimate is : "32505856" Bytes 
+CURRENT SAMPLE : Working set estimate is : "32883343" Bytes 
+SLOW MOVING AVG: Working set estimate is : "11427829" Bytes 
+FAST MOVING AVG: Working set estimate is : "30286374" Bytes 
+MAX ESTIMATE   : Working set estimate is : "32883343" Bytes 
+
+CURRENT SAMPLE : Error in Percentage of pages accessed is : "1.125000" % 
+SLOW MOVING AVG: Error in Percentage of pages accessed is : "-62.817407" % 
+FAST MOVING AVG: Error in Percentage of pages accessed is : "-6.614570" % 
+MAX ESTIMATE   : Error in Percentage of pages accessed is : "1.125000" % 
+
+CURRENT SAMPLE : Error in working set estimate is : "377487" Bytes 
+SLOW MOVING AVG: Error in working set estimate is : "-21078027" Bytes 
+FAST MOVING AVG: Error in working set estimate is : "-2219482" Bytes 
+MAX ESTIMATE   : Error in working set estimate is : "377487" Bytes 
+
+
+
+RUN "14"
+ACTUAL         : Number of pages accessed are : "1831" 
+CURRENT SAMPLE : Number of pages accessed are : "28" 
+
+ACTUAL         : Percentage of pages accessed is : "22.351074" % 
+CURRENT SAMPLE : Percentage of pages accessed is : "28.000000" % 
+SLOW MOVING AVG: Percentage of pages accessed is : "33.451834" % 
+FAST MOVING AVG: Percentage of pages accessed is : "34.226043" % 
+MAX ESTIMATE   : Percentage of pages accessed is : "34.226043" % 
+
+ACTUAL         : Working set estimate is : "7499776" Bytes 
+CURRENT SAMPLE : Working set estimate is : "9395240" Bytes 
+SLOW MOVING AVG: Working set estimate is : "11224570" Bytes 
+FAST MOVING AVG: Working set estimate is : "11484353" Bytes 
+MAX ESTIMATE   : Working set estimate is : "11484353" Bytes 
+
+CURRENT SAMPLE : Error in Percentage of pages accessed is : "5.648926" % 
+SLOW MOVING AVG: Error in Percentage of pages accessed is : "11.100760" % 
+FAST MOVING AVG: Error in Percentage of pages accessed is : "11.874969" % 
+MAX ESTIMATE   : Error in Percentage of pages accessed is : "11.874969" % 
+
+CURRENT SAMPLE : Error in working set estimate is : "1895464" Bytes 
+SLOW MOVING AVG: Error in working set estimate is : "3724794" Bytes 
+FAST MOVING AVG: Error in working set estimate is : "3984577" Bytes 
+MAX ESTIMATE   : Error in working set estimate is : "3984577" Bytes 
+
+
+
+RUN "15"
+ACTUAL         : Number of pages accessed are : "1832" 
+CURRENT SAMPLE : Number of pages accessed are : "25" 
+
+ACTUAL         : Percentage of pages accessed is : "22.363281" % 
+CURRENT SAMPLE : Percentage of pages accessed is : "25.000000" % 
+SLOW MOVING AVG: Percentage of pages accessed is : "32.606651" % 
+FAST MOVING AVG: Percentage of pages accessed is : "25.922604" % 
+MAX ESTIMATE   : Percentage of pages accessed is : "32.606651" % 
+
+ACTUAL         : Working set estimate is : "7503872" Bytes 
+CURRENT SAMPLE : Working set estimate is : "8388608" Bytes 
+SLOW MOVING AVG: Working set estimate is : "10940973" Bytes 
+FAST MOVING AVG: Working set estimate is : "8698182" Bytes 
+MAX ESTIMATE   : Working set estimate is : "10940973" Bytes 
+
+CURRENT SAMPLE : Error in Percentage of pages accessed is : "2.636719" % 
+SLOW MOVING AVG: Error in Percentage of pages accessed is : "10.243369" % 
+FAST MOVING AVG: Error in Percentage of pages accessed is : "3.559323" % 
+MAX ESTIMATE   : Error in Percentage of pages accessed is : "10.243369" % 
+
+CURRENT SAMPLE : Error in working set estimate is : "884736" Bytes 
+SLOW MOVING AVG: Error in working set estimate is : "3437101" Bytes 
+FAST MOVING AVG: Error in working set estimate is : "1194310" Bytes 
+MAX ESTIMATE   : Error in working set estimate is : "3437101" Bytes 
+
+
+
+RUN "16"
+ACTUAL         : Number of pages accessed are : "1834" 
+CURRENT SAMPLE : Number of pages accessed are : "21" 
+
+ACTUAL         : Percentage of pages accessed is : "22.387695" % 
+CURRENT SAMPLE : Percentage of pages accessed is : "21.000000" % 
+SLOW MOVING AVG: Percentage of pages accessed is : "31.445986" % 
+FAST MOVING AVG: Percentage of pages accessed is : "21.492260" % 
+MAX ESTIMATE   : Percentage of pages accessed is : "31.445986" % 
+
+ACTUAL         : Working set estimate is : "7512064" Bytes 
+CURRENT SAMPLE : Working set estimate is : "7046430" Bytes 
+SLOW MOVING AVG: Working set estimate is : "10551518" Bytes 
+FAST MOVING AVG: Working set estimate is : "7211605" Bytes 
+MAX ESTIMATE   : Working set estimate is : "10551518" Bytes 
+
+CURRENT SAMPLE : Error in Percentage of pages accessed is : "-1.387695" % 
+SLOW MOVING AVG: Error in Percentage of pages accessed is : "9.058290" % 
+FAST MOVING AVG: Error in Percentage of pages accessed is : "-0.895435" % 
+MAX ESTIMATE   : Error in Percentage of pages accessed is : "9.058290" % 
+
+CURRENT SAMPLE : Error in working set estimate is : "-465634" Bytes 
+SLOW MOVING AVG: Error in working set estimate is : "3039454" Bytes 
+FAST MOVING AVG: Error in working set estimate is : "-300459" Bytes 
+MAX ESTIMATE   : Error in working set estimate is : "3039454" Bytes 
+
+
+
+RUN "17"
+ACTUAL         : Number of pages accessed are : "1832" 
+CURRENT SAMPLE : Number of pages accessed are : "13" 
+
+ACTUAL         : Percentage of pages accessed is : "22.363281" % 
+CURRENT SAMPLE : Percentage of pages accessed is : "13.000000" % 
+SLOW MOVING AVG: Percentage of pages accessed is : "29.601387" % 
+FAST MOVING AVG: Percentage of pages accessed is : "13.849226" % 
+MAX ESTIMATE   : Percentage of pages accessed is : "29.601387" % 
+
+ACTUAL         : Working set estimate is : "7503872" Bytes 
+CURRENT SAMPLE : Working set estimate is : "4362076" Bytes 
+SLOW MOVING AVG: Working set estimate is : "9932573" Bytes 
+FAST MOVING AVG: Working set estimate is : "4647028" Bytes 
+MAX ESTIMATE   : Working set estimate is : "9932573" Bytes 
+
+CURRENT SAMPLE : Error in Percentage of pages accessed is : "-9.363281" % 
+SLOW MOVING AVG: Error in Percentage of pages accessed is : "7.238106" % 
+FAST MOVING AVG: Error in Percentage of pages accessed is : "-8.514055" % 
+MAX ESTIMATE   : Error in Percentage of pages accessed is : "7.238106" % 
+
+CURRENT SAMPLE : Error in working set estimate is : "-3141796" Bytes 
+SLOW MOVING AVG: Error in working set estimate is : "2428701" Bytes 
+FAST MOVING AVG: Error in working set estimate is : "-2856844" Bytes 
+MAX ESTIMATE   : Error in working set estimate is : "2428701" Bytes 
+
+
+
+RUN "18"
+ACTUAL         : Number of pages accessed are : "1834" 
+CURRENT SAMPLE : Number of pages accessed are : "15" 
+
+ACTUAL         : Percentage of pages accessed is : "22.387695" % 
+CURRENT SAMPLE : Percentage of pages accessed is : "15.000000" % 
+SLOW MOVING AVG: Percentage of pages accessed is : "28.141248" % 
+FAST MOVING AVG: Percentage of pages accessed is : "14.884923" % 
+MAX ESTIMATE   : Percentage of pages accessed is : "28.141248" % 
+
+ACTUAL         : Working set estimate is : "7512064" Bytes 
+CURRENT SAMPLE : Working set estimate is : "5033164" Bytes 
+SLOW MOVING AVG: Working set estimate is : "9442632" Bytes 
+FAST MOVING AVG: Working set estimate is : "4994550" Bytes 
+MAX ESTIMATE   : Working set estimate is : "9442632" Bytes 
+
+CURRENT SAMPLE : Error in Percentage of pages accessed is : "-7.387695" % 
+SLOW MOVING AVG: Error in Percentage of pages accessed is : "5.753553" % 
+FAST MOVING AVG: Error in Percentage of pages accessed is : "-7.502773" % 
+MAX ESTIMATE   : Error in Percentage of pages accessed is : "5.753553" % 
+
+CURRENT SAMPLE : Error in working set estimate is : "-2478900" Bytes 
+SLOW MOVING AVG: Error in working set estimate is : "1930568" Bytes 
+FAST MOVING AVG: Error in working set estimate is : "-2517514" Bytes 
+MAX ESTIMATE   : Error in working set estimate is : "1930568" Bytes 
+
+
+
+RUN "19"
+ACTUAL         : Number of pages accessed are : "1832" 
+CURRENT SAMPLE : Number of pages accessed are : "30" 
+
+ACTUAL         : Percentage of pages accessed is : "22.363281" % 
+CURRENT SAMPLE : Percentage of pages accessed is : "30.000000" % 
+SLOW MOVING AVG: Percentage of pages accessed is : "28.327124" % 
+FAST MOVING AVG: Percentage of pages accessed is : "28.488492" % 
+MAX ESTIMATE   : Percentage of pages accessed is : "30.000000" % 
+
+ACTUAL         : Working set estimate is : "7503872" Bytes 
+CURRENT SAMPLE : Working set estimate is : "10066329" Bytes 
+SLOW MOVING AVG: Working set estimate is : "9505001" Bytes 
+FAST MOVING AVG: Working set estimate is : "9559151" Bytes 
+MAX ESTIMATE   : Working set estimate is : "10066329" Bytes 
+
+CURRENT SAMPLE : Error in Percentage of pages accessed is : "7.636719" % 
+SLOW MOVING AVG: Error in Percentage of pages accessed is : "5.963842" % 
+FAST MOVING AVG: Error in Percentage of pages accessed is : "6.125211" % 
+MAX ESTIMATE   : Error in Percentage of pages accessed is : "7.636719" % 
+
+CURRENT SAMPLE : Error in working set estimate is : "2562457" Bytes 
+SLOW MOVING AVG: Error in working set estimate is : "2001129" Bytes 
+FAST MOVING AVG: Error in working set estimate is : "2055279" Bytes 
+MAX ESTIMATE   : Error in working set estimate is : "2562457" Bytes 
+
+
+
+RUN "20"
+ACTUAL         : Number of pages accessed are : "1832" 
+CURRENT SAMPLE : Number of pages accessed are : "24" 
+
+ACTUAL         : Percentage of pages accessed is : "22.363281" % 
+CURRENT SAMPLE : Percentage of pages accessed is : "24.000000" % 
+SLOW MOVING AVG: Percentage of pages accessed is : "27.894411" % 
+FAST MOVING AVG: Percentage of pages accessed is : "24.448849" % 
+MAX ESTIMATE   : Percentage of pages accessed is : "27.894411" % 
+
+ACTUAL         : Working set estimate is : "7503872" Bytes 
+CURRENT SAMPLE : Working set estimate is : "8053063" Bytes 
+SLOW MOVING AVG: Working set estimate is : "9359807" Bytes 
+FAST MOVING AVG: Working set estimate is : "8203671" Bytes 
+MAX ESTIMATE   : Working set estimate is : "9359807" Bytes 
+
+CURRENT SAMPLE : Error in Percentage of pages accessed is : "1.636719" % 
+SLOW MOVING AVG: Error in Percentage of pages accessed is : "5.531130" % 
+FAST MOVING AVG: Error in Percentage of pages accessed is : "2.085568" % 
+MAX ESTIMATE   : Error in Percentage of pages accessed is : "5.531130" % 
+
+CURRENT SAMPLE : Error in working set estimate is : "549191" Bytes 
+SLOW MOVING AVG: Error in working set estimate is : "1855935" Bytes 
+FAST MOVING AVG: Error in working set estimate is : "699799" Bytes 
+MAX ESTIMATE   : Error in working set estimate is : "1855935" Bytes 
+
+
+
+RUN "21"
+ACTUAL         : Number of pages accessed are : "1831" 
+CURRENT SAMPLE : Number of pages accessed are : "20" 
+
+ACTUAL         : Percentage of pages accessed is : "22.351074" % 
+CURRENT SAMPLE : Percentage of pages accessed is : "20.000000" % 
+SLOW MOVING AVG: Percentage of pages accessed is : "27.104970" % 
+FAST MOVING AVG: Percentage of pages accessed is : "20.444885" % 
+MAX ESTIMATE   : Percentage of pages accessed is : "27.104970" % 
+
+ACTUAL         : Working set estimate is : "7499776" Bytes 
+CURRENT SAMPLE : Working set estimate is : "6710886" Bytes 
+SLOW MOVING AVG: Working set estimate is : "9094914" Bytes 
+FAST MOVING AVG: Working set estimate is : "6860164" Bytes 
+MAX ESTIMATE   : Working set estimate is : "9094914" Bytes 
+
+CURRENT SAMPLE : Error in Percentage of pages accessed is : "-2.351074" % 
+SLOW MOVING AVG: Error in Percentage of pages accessed is : "4.753896" % 
+FAST MOVING AVG: Error in Percentage of pages accessed is : "-1.906189" % 
+MAX ESTIMATE   : Error in Percentage of pages accessed is : "4.753896" % 
+
+CURRENT SAMPLE : Error in working set estimate is : "-788890" Bytes 
+SLOW MOVING AVG: Error in working set estimate is : "1595138" Bytes 
+FAST MOVING AVG: Error in working set estimate is : "-639612" Bytes 
+MAX ESTIMATE   : Error in working set estimate is : "1595138" Bytes 
+
+
+
+make: *** [Makefile:5: run] Terminated
