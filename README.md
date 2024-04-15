@@ -7,9 +7,7 @@
 |Karan Godara | 210050082|
 
 ## Explanation of Submission Directory and Running Instructions
-## Code Folder
-
-[Code folder](Code)
+## [Code folder](Code)
    - This folder contains the 10 guest VM files, each with a different memory access pattern. The names of the files match those in the report and indicate the memory access pattern of the guest VM.
    - Additionally, it contains the following KVM files:
      - [simple-kvm.c](Code/simple-kvm.c) : KVM with parameters mentioned in the memmgmt paper, with Sampling period 30 and sampling size 100.
@@ -42,12 +40,8 @@
 
 **Note:** If you want a KVM with different parameters (default parameters are the ones in the paper SP = 30 and SS = 100), rename that KVM as `simple-kvm.c` and run the above commands.
 
-## Results Folder
-
-[Results folder](Results)
+## [Results folder](Results)
 - This folder contains the results (both graphs and result files) obtained for each KVM configuration for each memory access pattern of the guest.
 
-## Report
-
-[Report](Report.pdf)
+## [Report](Report.pdf)
 - This is our comprehensive report that meticulously outlines the motivation, objectives, experimental setup, design, results, observations, and conclusions drawn from each experiment, culminating in our final analysis and insights.
