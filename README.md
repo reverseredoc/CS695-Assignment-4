@@ -11,11 +11,11 @@
 1. [Code folder](Code)
    - This folder contains the 10 guest VM files, each with a different memory access pattern. The names of the files match those in the report and indicate the memory access pattern of the guest VM.
    - Additionally, it contains skvm files:
-     - [simple_kvm.c](Code\simple_kvm.c) : KVM with parameters mentioned in the memmgmt paper, with Sampling period 30 and sampling size 100.
-     - [simple_kvm_SP10_SS100](Code/simple_kvm_SP10_SS100) : KVM with sampling period 10 and sampling size 100.
-     - [simple_kvm_SP50_SS100](Code/simple_kvm_SP50_SS100) : KVM with sampling period 50 and sampling size 100.
-     - [simple_kvm_SP30_SS50](Code/simple_kvm_SP30_SS50) : KVM with sampling period 30 and sampling size 50.
-     - [simple_kvm_SP30_SS200](Code/simple_kvm_SP30_SS200) : KVM with sampling period 30 and sampling size 200.
+     - [simple_kvm.c](Code/simple_kvm.c) : KVM with parameters mentioned in the memmgmt paper, with Sampling period 30 and sampling size 100.
+     - [simple_kvm_SP10_SS100](Code/simple_kvm_SP10_SS100.c) : KVM with sampling period 10 and sampling size 100.
+     - [simple_kvm_SP50_SS100](Code/simple_kvm_SP50_SS100.c) : KVM with sampling period 50 and sampling size 100.
+     - [simple_kvm_SP30_SS50](Code/simple_kvm_SP30_SS50.c) : KVM with sampling period 30 and sampling size 50.
+     - [simple_kvm_SP30_SS200](Code/simple_kvm_SP30_SS200.c) : KVM with sampling period 30 and sampling size 200.
 
 ## Running Instructions
 
