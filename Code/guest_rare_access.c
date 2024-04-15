@@ -153,11 +153,6 @@ _start(void) {
         	ramesh[random_number] = 23;
 		}
 		HC_Sleep();
-		// for(int i = 0; i<496*(1<<16);i++){
-		// 	// HC_print32bit(i);
-		// 	HC_DoNothing2();
-		// 	ramesh[i] = 23;
-		// }
 	}
 
 	

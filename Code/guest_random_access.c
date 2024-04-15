@@ -150,11 +150,6 @@ _start(void) {
 
         int random_number = custom_rand(max_range, &seed);
         ramesh[random_number] = 23;
-		// for(int i = 0; i<496*(1<<16);i++){
-		// 	// HC_print32bit(i);
-		// 	HC_DoNothing2();
-		// 	ramesh[i] = 23;
-		// }
 	}
 
 	
