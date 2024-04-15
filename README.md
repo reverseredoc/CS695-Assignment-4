@@ -48,5 +48,5 @@
 
 ## Report
 
-[Report.pdf](Report.pdf)
+[Report](Report.pdf)
 - This is our comprehensive report that meticulously outlines the motivation, objectives, experimental setup, design, results, observations, and conclusions drawn from each experiment, culminating in our final analysis and insights.
