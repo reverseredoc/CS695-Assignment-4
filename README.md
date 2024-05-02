@@ -17,6 +17,7 @@
      - [simple-kvm_SP30_SS200](Code/simple-kvm_SP30_SS200.c) : KVM with sampling period 30 and sampling size 200.
 
 ## Running Instructions
+In the **'code'** folder, do the following
 
 1. Make a symbolic link 'guest.c' to the guest file you want to run:
 
