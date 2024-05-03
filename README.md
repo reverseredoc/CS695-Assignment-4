@@ -45,7 +45,7 @@ In the **'Code'** folder, do the following
 - This folder contains the results (both graphs and result files) obtained for each KVM configuration for each memory access pattern of the guest.
 
 ## [Graph_makers](Graph_makers)
-- This folder contains the codes to make graphs. To use any of the code, run the code with python3, with the file containing the data of all runs as printed on the terminal as the first argyment on the terminal
+- This folder contains the codes to make graphs. To use any of the codes, run the code with python3, with the file containing the data of all runs as printed on the terminal as the first argument.
 
 ## [Report](Report.pdf)
 - This is our comprehensive report that meticulously outlines the motivation, objectives, experimental setup, design, results, observations, and conclusions drawn from each experiment, culminating in our final analysis and insights.
